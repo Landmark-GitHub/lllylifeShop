@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Seymour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Rubik+Bubbles&family=Seymour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nunito:wght@500&family=Rubik+Bubbles&family=Seymour+One&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 45px;
+}
+
+.header{
+    background-color: bisque;
+    display: flex;
+}
+
+.logo{
+    /* background-color: aqua; */
+    float: left;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.username{
+    /* background-color: blanchedalmond; */
+    float: left;
+    justify-content: right;
+}
+
+.username p {
+    font-size: 20px;
+}
+
+
+.login{
+    background-color: yellowgreen;
+}
+
