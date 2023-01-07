@@ -13,30 +13,24 @@
 }
 
 .header{
-    background-color: bisque;
-    display: flex;
+    display: grid;
 }
 
 .logo{
-    /* background-color: aqua; */
-    float: left;
-    margin: auto;
-    justify-content: center;
     text-align: center;
 }
 
+.logo H1{
+    font-size: 80px;
+}
+
+.logo p{
+    top: 0;
+}
+
 .username{
-    /* background-color: blanchedalmond; */
-    float: left;
-    justify-content: right;
-}
-
-.username p {
-    font-size: 20px;
-}
-
-
-.login{
-    background-color: yellowgreen;
+    position: absolute;
+    top: 2%;
+    right: 1%;
 }
 
