@@ -32,10 +32,11 @@
 }
 
 #product{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 200px);
-    grid-gap: 15px;
+    column-width: 320px;
+    column-gap: 15px;
+    width: 90%;
+    max-width: 1500px;
+    margin: 50px auto;
 }
 
 #product figure {
