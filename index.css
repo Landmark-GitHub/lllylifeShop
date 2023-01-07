@@ -17,15 +17,12 @@
 }
 
 .logo{
+
     text-align: center;
 }
 
 .logo H1{
     font-size: 80px;
-}
-
-.logo p{
-    top: 0;
 }
 
 .username{
@@ -34,3 +31,29 @@
     right: 1%;
 }
 
+#product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    grid-gap: 15px;
+}
+
+#product figure {
+    background: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 2px 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    transition: .4 ease-in-out;
+    display: inline-block;
+    -webkit-column-break-inside: avoid;
+  }
+  
+  #product figure img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
