@@ -12,6 +12,10 @@
     font-size: 45px;
 }
 
+.body-c{
+    background: black;
+}
+
 .header{
     display: grid;
     box-shadow: 10px 10px;
@@ -32,7 +36,78 @@
     right: 1%;
 }
 
-#product{
+.menu{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.5s ease;
+}
+
+.menu-area {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li{
+    /* box-shadow: 0 3px 4px rgb(110, 110, 110); */
+    position: absolute;
+    justify-content: center;
+    list-style: none;
+    transform-origin: 100px;
+    transition: 1.25s;
+    transition-delay: 0.1s;
+    transform: rotate(0deg) translateY(0px);
+}
+
+.menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    padding: 10%;
+    border-radius: 50%;
+    box-shadow: 0 3px 4px rgb(146, 146, 146);
+}
+
+.menu li a ion-icon {
+    color: black;
+}
+
+.menu.active li{
+    /* transform: rotate(calc(360deg / 5 * var(--i))) translateY(-150px); */ /*วงกลม*/
+    transform: rotate(0deg) translateY(calc(-100px - var(--i) * 90px));
+}
+
+.toggle{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    border-radius: 40%;
+    cursor: pointer;
+    box-shadow: 0 3px 4px rgb(146, 146, 146);
+    font-size: 2em;
+    transition: transform 1.25s;
+}
+
+.menu.active .toggle{
+    transform: rotate(300deg);
+}
+
+.container{
     column-width: 320px;
     column-gap: 15px;
     width: 90%;
@@ -40,7 +115,7 @@
     margin: 50px auto;
 }
 
-#product figure {
+.container .product{
     cursor: pointer;
     background: white;
     border: none;
@@ -53,14 +128,15 @@
     -webkit-column-break-inside: avoid;
 }
 
-#product figure:hover{
-    transform: scale(1.05);
-}
-  
-#product figure img {
+.container .product img{
     width: 100%;
     height: auto;
     padding-bottom: 15px;
     margin-bottom: 5px;
     border-radius: 4px;
 }
+
+.container .product:hover{
+    transform: scale(1.05);
+}
+
