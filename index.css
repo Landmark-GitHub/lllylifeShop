@@ -100,8 +100,8 @@
 .modalImg{
     min-width: 400px;
     max-width: 600px;
-    min-height: 400px;
-    max-height: 800px;
+    min-height: 200px;
+    max-height: 500px;
 }
 
 .modalDetail{

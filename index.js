@@ -1,12 +1,113 @@
-const toggle = document.querySelector('.toggle');
-const menu = document.querySelector('.menu');
-const menuarea = document.querySelector('menu-area')
+// const toggle = document.querySelector('.toggle');
+// const menu = document.querySelector('.menu');
+// const menuarea = document.querySelector('menu-area')
 
-toggle.onclick = function() {
-    menu.classList.toggle('active');
-    if (menu.classList.contains('active')) {
-        menu.style.backgroundColor = 'rgba(0, 0, 0, 0.37)';
-    } else {
-        menu.style.backgroundColor = 'transparent';
+// toggle.onclick = function() {
+//     menu.classList.toggle('active');
+//     if (menu.classList.contains('active')) {
+//         menu.style.backgroundColor = 'rgba(0, 0, 0, 0.37)';
+//     } else {
+//         menu.style.backgroundColor = 'transparent';
+//     }
+// }
+
+var product = [{
+    id: 1,
+    image: 'https://cf.shopee.co.th/file/521e06dead2d47ef2bbf9872ea0c70b3',
+    name: 'T-shit',
+    piece: 5000000,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+},{
+    id: 2,
+    image: 'https://cf.shopee.co.th/file/5d06c2e47e2b1b0bc7d5c46512c29574',
+    name: 's-shittt',
+    piece: 7500,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+},{
+    id: 3,
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BrOqtXM9ExAcwIYVbobDU2PNif5_0drX2kZ5v5FUykeT3G4OXQG1xXxvsmSz117sC34&usqp=CAU',
+    name: 'd-shit',
+    piece: 1500,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+},{
+    id: 4,
+    image: 'https://cf.shopee.co.th/file/f9b984d408826a12c4e76855ee49acbd',
+    name: 'l-shit',
+    piece: 5000000,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+},{
+    id: 5,
+    image: 'https://lzd-img-global.slatic.net/g/ff/kf/Sb125adb661f24c359e7a102693f7f3960.jpg_720x720q80.jpg_.webp',
+    name: 'g-shittt',
+    piece: 7500,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+},{
+    id: 6,
+    image: 'https://inwfile.com/s-j/ryicby.jpg',
+    name: 'G-shit',
+    piece: 1500,
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
+    type: 'T-shit'
+}]
+
+$(document).ready(() =>{
+    var html = '';
+    for (let i = 0; i < (product.length); i++) {
+        html += `<div onclick="openModul(${i})" class="item ${product[i].type}">
+                    <img src=" ${product[i].image}">
+                    <figcaption>
+                        ${product[i].name}
+                    </figcaption>
+                    <p> ${numberWithCommas(product[i].piece)} THB</p>
+                </div>`;
     }
+    $("#productlist").html(html);
+})
+
+var productindex = 0;
+function openModul(index) {
+    productindex = index;
+    console.log(productindex)
+    $("#modalDes").css('display','flex')
+    $("#modalDesImage").attr('src',product[index].image)
+    $("#modalDes").attr('src',product[index].description)
+    
+}
+
+function closeModal() {
+    $(".modal").css('display','none')
+}
+
+
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
+
+function searchSomething(key) {
+    var valume = $('#' + key.id).val()
+    console.log(valume)
+
+    var html = '';
+    for (let i = 0; i < (product.length); i++) {
+        if(product[i].name.includes(valume)){
+            html += `<div class="item ${product[i].type}">
+                    <img src=" ${product[i].image}">
+                    <figcaption>
+                        ${product[i].name}
+                    </figcaption>
+                    <p> ${numberWithCommas(product[i].piece)} THB</p>
+                    </div>`;
+        }
+    }
+
+    $("#productlist").html(html);
 }

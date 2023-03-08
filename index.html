@@ -8,12 +8,14 @@
     <title>lllylifeSHOP</title>
     <link rel="icon" type="image/x-icon" href="\img\my.jpg">
     <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </head>
+
 
 <body>
 
     <div class="header">
-
         <div class="logo">
             <h1>Mylife.shop</h1>
             <p>welcome to website of mylife.shop</p>
@@ -22,168 +24,25 @@
         <div class="username">
             <img style="width: 50px; height: 50px;" src="https://cdn-icons-png.flaticon.com/512/9623/9623115.png">
         </div>
-
     </div>
 
-    <div class="product">
-
-        <div class="item">
-            <img src="/img_product/S__17866758.jpg">
-            <figcaption>
-                Mountain And Slogan Graphic Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img/S__17866757.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866760.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866761.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866762.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866763.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866764.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866765.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866766.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866767.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866768.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866769.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866774.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866771.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-
-        <div class="item">
-            <img src="/img_product/S__17866772.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866773.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866775.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866776.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-
-        <div class="item">
-            <img src="/img_product/S__17866777.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
-
-        <div class="item">
-            <img src="/img_product/S__17866778.jpg">
-            <figcaption>
-                Plus Bear And Letter Graphic Drop Shoulder Tee
-            </figcaption>
-        </div>
+    <div class="containerSeach">
+        <input onkeyup="searchSomething(this)" id="txt_search" class="searchBar" type="text" placeholder="Search...">
     </div>
 
-    <div class="modal" style="display: none;">
-        <div class="modal-bg"></div>
+    <div id="productlist" class="product">
+    </div>
+
+    <div id="modalDes" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
             <div class="modal-header">
                 <h1>Details</h1>
-                <img class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png" style="width: 30px; height: 30px;">
+                <img onclick="closeModal()" class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png" style="width: 30px; height: 30px;">
             </div>
             <div class="modalContent">
-                <img class="modalImg" src="/img_product/S__17866778.jpg">
-                <div class="modalDetail">Lorem ipsum dolor,
-                    sit amet consectetur adipisicing elit. Assumenda quidem amet voluptatibus voluptas voluptatum libero
-                    dolores, excepturi qui cum accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Perferendis laudantium rerum facilis accusantium ex dignissimos ratione doloribus fugit, quod
-                    maiores temporibus tenetur. Dolor veniam illum distinctio accusantium autem. At, quod?
+                <img id="modalDesImage" class="modalImg" src="/img_product/S__17866778.jpg">
+                <div id="modalDesDes" class="modalDetail">r veniam illum distinctio accusantium autem. At, quod?
                     <br>
                     <div class="area-btn">
                         <button class="btn-cash">Cash</button>
@@ -194,7 +53,7 @@
         </div>
     </div>
 
-    <div class="modal" >
+    <div class="modal" style="display: none;" >
         <div class="modal-bg"></div>
         <div class="modal-page">
             <div class="modal-header">
