@@ -27,8 +27,8 @@ var product = [{
     type: 'T-shit'
 },{
     id: 3,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8BrOqtXM9ExAcwIYVbobDU2PNif5_0drX2kZ5v5FUykeT3G4OXQG1xXxvsmSz117sC34&usqp=CAU',
-    name: 'd-shit',
+    image: 'https://static.wixstatic.com/media/07dfe4_b5efc2f4bfdb46d7b5d1eaa6bb811e34~mv2_d_3202_4144_s_4_2.jpg/v1/fill/w_498,h_665,al_c,q_85,usm_0.66_1.00_0.01/07dfe4_b5efc2f4bfdb46d7b5d1eaa6bb811e34~mv2_d_3202_4144_s_4_2.jpg',
+    name: 'GWAR',
     piece: 1500,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum facilis natus corrupti itaque asperiores',
     type: 'T-shit'
@@ -76,7 +76,6 @@ function openModul(index) {
     $("#modalDes").css('display','flex')
     $("#modalDesImage").attr('src',product[index].image)
     $("#modalDes").attr('src',product[index].description)
-    
 }
 
 function closeModal() {
