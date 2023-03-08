@@ -8,7 +8,8 @@
     <title>lllylifeSHOP</title>
     <link rel="icon" type="image/x-icon" href="\img\my.jpg">
     <link rel="stylesheet" href="index.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </head>
 
@@ -34,11 +35,12 @@
     </div>
 
     <div id="modalDes" class="modal" style="display: none;">
-        <div onclick="closeModal()" class="modal-bg">
-            <div class="modal-page">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
             <div class="modal-header">
                 <h1>Details</h1>
-                <img onclick="closeModal()" class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png" style="width: 30px; height: 30px;">
+                <img onclick="closeModal()" class="colse-modal-page"
+                    src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png" style="width: 30px; height: 30px;">
             </div>
             <div class="modalContent">
                 <img id="modalDesImage" class="modalImg" src="/img_product/S__17866778.jpg">
@@ -46,25 +48,25 @@
                     <h2 class="nameProduct">name</h2>
                     <p class="pieceProduct">1500 THB</p>
                     <span>
-                        <p class="DesProduct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, et!</p>
+                        <p class="desProduct">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, et!
+                        </p>
                     </span>
                     <br>
                     <div class="area-btn">
-                        <button class="btn-cash">Cash</button>
-                        <button class="btn-cash">Cash</button>
+                        <button onclick="closeModal()" class="btn-cash">Cancel</button>
+                        <button onclick="addtoCash()" class="btn-Cancel">Cash</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        
+
     </div>
 
-    <div class="modal" style="display: none;" >
+    <div class="modal" style="display: none;">
         <div class="modal-bg"></div>
         <div class="modal-page">
             <div class="modal-header">
-                <h1 >MY CART</h1>
+                <h1>MY CART</h1>
                 <img class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png">
             </div>
 
@@ -79,9 +81,11 @@
                         </div>
                     </div>
                     <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
                         <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                     </div>
                 </div>
 
@@ -94,24 +98,11 @@
                         </div>
                     </div>
                     <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
                         <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-                
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                     </div>
                 </div>
 
@@ -124,9 +115,11 @@
                         </div>
                     </div>
                     <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
                         <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                     </div>
                 </div>
 
@@ -139,12 +132,14 @@
                         </div>
                     </div>
                     <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
                         <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                     </div>
                 </div>
-                
+
                 <div class="cart-item">
                     <div class="cart-item-left">
                         <img class="cartImg" src="/img_product/S__17866778.jpg">
@@ -154,9 +149,28 @@
                         </div>
                     </div>
                     <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png" style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
                         <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png" style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="cart-item-left">
+                        <img class="cartImg" src="/img_product/S__17866778.jpg">
+                        <div class="cart-item-detail">
+                            <p style="font-size: 2.5vw;">Product Name</p>
+                            <p style="font-size: 2.2vw;">Price 130 THB</p>
+                        </div>
+                    </div>
+                    <div class="cart-item-right">
+                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
+                        <p style="margin: 0 20px;">1</p>
+                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                     </div>
                 </div>
 
