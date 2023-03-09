@@ -1,16 +1,3 @@
-// const toggle = document.querySelector('.toggle');
-// const menu = document.querySelector('.menu');
-// const menuarea = document.querySelector('menu-area')
-
-// toggle.onclick = function() {
-//     menu.classList.toggle('active');
-//     if (menu.classList.contains('active')) {
-//         menu.style.backgroundColor = 'rgba(0, 0, 0, 0.37)';
-//     } else {
-//         menu.style.backgroundColor = 'transparent';
-//     }
-// }
-
 var product = [{
     id: 1,
     image: 'https://cf.shopee.co.th/file/521e06dead2d47ef2bbf9872ea0c70b3',
@@ -116,13 +103,20 @@ function searchSomething(key) {
 
 var cash = []
 function addtoCash() {
-    var pass = true
+    var orderAddToCash = true
 
+    // Loop Add Count in Cash
     for (let i = 0; i < cash.length; i++){
+        if(productindex == cash[i].index) {
+            console.log('Same')
+            cash[i].count++;
+            orderAdd = false
+        }
 
     }
 
-    if(pass) {
+    //if orderAddToCash == true add Details Product to cash array
+    if(orderAddToCash) {
         var obj = {
             index: productindex,
             id: product[productindex].id,
@@ -131,8 +125,20 @@ function addtoCash() {
             img: product[productindex].img,
             count: 1
         }
-        console.log(obj)
         cash.push(obj)
     }
     console.log(cash)
+}
+
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menu');
+const menuarea = document.querySelector('menu-area')
+
+function toggleClick(){
+    menu.classList.toggle('active');
+    if (menu.classList.contains('active')) {
+        menu.style.backgroundColor = 'rgba(0, 0, 0, 0.37)';
+    } else {
+        menu.style.backgroundColor = 'transparent';
+    }
 }
