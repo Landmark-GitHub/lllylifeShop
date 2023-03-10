@@ -8,8 +8,10 @@
     <title>lllylifeSHOP</title>
     <link rel="icon" type="image/x-icon" href="\img\my.jpg">
     <link rel="stylesheet" href="index.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="index.js"></script>
 </head>
 
@@ -29,6 +31,27 @@
 
     <div class="containerSeach">
         <input onkeyup="searchSomething(this)" id="txt_search" class="searchBar" type="text" placeholder="Search...">
+    </div>
+
+    <div id="mub" class="menuBotton" style="background-color: burlywood ;">
+
+        <div id="cartCount" class="cartCount" style="display: none;"> 
+            <p>1</p> 
+        </div>
+
+        <div onclick="openMenu()" class="bottonCicle" >
+            <ion-icon name="add-outline" style="height: 65px; width: 65px;"></ion-icon>
+        </div>
+        <li style="--i:1;">
+            <a href="#"><ion-icon name="shirt-outline"></ion-icon></a>
+        </li>
+        <li style="--i:2;">
+            <a href="#"><ion-icon name="shirt-outline"></ion-icon></a>
+        </li>
+        <li style="--i:3;">
+            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+        </li>
+
     </div>
 
     <div id="productlist" class="product">
@@ -182,12 +205,6 @@
                 <button class="btn-finish">Finish</button>
             </div>
 
-        </div>
-    </div>
-
-    <div class="menuBotton" style="background-color: aqua;">
-        123
-        <div class="bottonCicle" style="background-color: blueviolet;">123
         </div>
     </div>
 

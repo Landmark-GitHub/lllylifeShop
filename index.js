@@ -97,19 +97,22 @@ function searchSomething(key) {
                     </div>`;
         }
     }
-
-    $("#productlist").html(html);
+    if(html == '') {
+        $("#productlist").html('Not Found Product');
+    }else{
+        $("#productlist").html(html);
+    }
 }
 
-var cash = []
+var cart = []
 function addtoCash() {
     var orderAddToCash = true
 
     // Loop Add Count in Cash
-    for (let i = 0; i < cash.length; i++){
-        if(productindex == cash[i].index) {
+    for (let i = 0; i < cart.length; i++){
+        if(productindex == cart[i].index) {
             console.log('Same')
-            cash[i].count++;
+            cart[i].count++;
             orderAdd = false
         }
 
@@ -125,20 +128,22 @@ function addtoCash() {
             img: product[productindex].img,
             count: 1
         }
-        cash.push(obj)
+        cart.push(obj)
     }
-    console.log(cash)
+    console.log(cart)
+
+    Swal.fire({
+        title: 'Add ' + product[productindex].name + ' to cart',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+    $("#cartCount").css('display','flex').text(cart.length)
 }
 
-const toggle = document.querySelector('.toggle');
-const menu = document.querySelector('.menu');
-const menuarea = document.querySelector('menu-area')
-
-function toggleClick(){
-    menu.classList.toggle('active');
-    if (menu.classList.contains('active')) {
-        menu.style.backgroundColor = 'rgba(0, 0, 0, 0.37)';
-    } else {
-        menu.style.backgroundColor = 'transparent';
-    }
+function openMenu() {
+    $("#mub").toggleClass("active");
 }

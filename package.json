@@ -4,7 +4,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.21",
+    "sweetalert2": "^11.7.3"
   },
   "scripts": {
     "build": "postcss styles.css -o public/build/styles.css"
