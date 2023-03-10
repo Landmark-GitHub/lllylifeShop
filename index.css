@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nunito:wght@500&family=Rubik+Bubbles&family=Seymour+One&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,33 +12,33 @@
     font-size: 45px;
 }
 
-.header{
+.header {
     display: grid;
 
 }
 
-.logo{
-    
+.logo {
+
     text-align: center;
 }
 
-.logo h1{
+.logo h1 {
     font-size: 80px;
 }
 
-.username{
+.username {
     position: absolute;
     top: 2%;
     right: 1%;
 }
 
-.containerSeach{
+.containerSeach {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.searchBar{
+.searchBar {
     color: black;
     padding: 10px;
     font-size: 25px;
@@ -47,11 +47,20 @@
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
     width: 300px;
     height: 50px;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.product{
-    column-width: 320px;
-    column-gap: 50px;
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* กำหนดจำนวนคอลัมน์และขนาดขั้นต่ำของแต่ละคอลัมน์ */
+    grid-auto-rows: 1fr;
+    /* กำหนดความสูงของแต่ละแถว */
+    grid-auto-flow: dense;
+    /* จัดวางไอเท็มแบบ Pinterest styles */
+    gap: 50px;
+    /* ระยะห่างระหว่างไอเท็ม */
     width: 90%;
     max-width: 3500px;
     margin: 30px auto;
@@ -62,19 +71,18 @@
     background: white;
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.37);
-    margin: 0 2px 15px;
+    margin-bottom: 15px;
     border-radius: 4%;
     padding: 20px;
     padding-bottom: 10px;
     transition: .4 ease-in-out;
-    display: inline-block;
     -webkit-column-break-inside: avoid;
 }
 
-.item:hover{
+.item:hover {
     transform: scale(1.05);
 }
-  
+
 .item img {
     width: 100%;
     height: auto;
@@ -83,7 +91,8 @@
     border-radius: 4px;
 }
 
-.modal , .modal-bg{
+.modal,
+.modal-bg {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -93,7 +102,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .modal-page {
@@ -117,7 +126,7 @@
     display: flex;
 }
 
-.modalImg{
+.modalImg {
     min-width: 200px;
     max-width: 400px;
     min-height: 200px;
@@ -126,7 +135,7 @@
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
-.modalDetail{
+.modalDetail {
     min-width: 500px;
     max-width: 800px;
     min-height: 400px;
@@ -146,7 +155,7 @@
     justify-content: space-between;
 }
 
-.colse-modal-page{
+.colse-modal-page {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -154,7 +163,7 @@
     margin-right: 10px;
 }
 
-.modal-header h1{
+.modal-header h1 {
     margin-left: 10px;
 }
 
@@ -168,9 +177,9 @@
 
 .cart-item {
     display: flex;
-    justify-content:space-between;
-    margin-bottom: 20px ;
-    width: 100%; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .cart-item-left {
@@ -193,7 +202,7 @@
     height: 10vw;
 }
 
-.cart-item-detail{
+.cart-item-detail {
     margin: 30px 20px;
 }
 
@@ -217,23 +226,67 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
+    height: 100%;
+    width: 100%;
     z-index: 1;
-    left: 37%;
-    /* right: 0;
-    bottom: 0; */
-    margin: 20px;
+    right: -50%;
+    bottom: 0;
+    transform: translateX(-50%);
 }
+
 
 .menuBotton li {
     position: absolute;
     list-style: none;
-    margin-top: 15%;
+    bottom: 0;
+    right: 0;
+    padding-right: 38px;
+    margin-bottom: 50px;
+    /* เพิ่มระยะห่างด้านล่าง */
     transform-origin: 100px;
-    transform: rotate(calc(360deg/ 5 * var(--i))) rotate(-90deg) translateX(50%);}
+    transition: 0.5s;
+    transition-delay: translateY(calc(100% * var(--i)));
+}
+
+.menuBotton li a {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    /* เพิ่มระยะห่างด้านบน */
+    background-color: white;
+    border-radius: 100%;
+    color: black;
+}
+
+.menuBotton li a:hover {
+    background-color: yellow;
+}
+
+.menuBotton.active li {
+    transform: translateY(calc(-100% * var(--i)));
+    transition: transform 1.25s;
+}
+
+.menuBotton.active:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* เปลี่ยนสี background ตามที่ต้องการ */
+    z-index: -1;
+}
 
 .bottonCicle {
-    /* position: absolute; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
     padding: 17px;
     background-color: white;
     border-radius: 50%;
@@ -263,6 +316,6 @@
     z-index: 2;
 }
 
-.menuBotton.active .bottonCicle{
+.menuBotton.active .bottonCicle {
     transform: rotate(315deg);
 }

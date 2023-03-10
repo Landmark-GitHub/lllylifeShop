@@ -88,7 +88,7 @@ function searchSomething(key) {
     var html = '';
     for (let i = 0; i < (product.length); i++) {
         if(product[i].name.includes(valume)){
-            html += `<div onclick="openModal(${i}) class="item ${product[i].type}">
+            html += `<div onclick="openModal(${i})" class="item ${product[i].type}">
                     <img src=" ${product[i].image}">
                     <figcaption>
                         ${product[i].name}
