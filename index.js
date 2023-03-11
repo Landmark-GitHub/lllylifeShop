@@ -206,9 +206,11 @@ function openMenu() {
         if (cart.length < 0) {
             $("#cartCount").css('display', 'none');
         } else {
-            setTimeout(function () {
-                $("#cartCount").css('display', 'block');
-            }, 1050)
+            if(cart.length > 0){
+                setTimeout(function () {
+                    $("#cartCount").css('display', 'block');
+                }, 1050)
+            }
         }
     }
 }
