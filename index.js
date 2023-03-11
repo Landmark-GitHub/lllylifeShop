@@ -234,12 +234,12 @@ function renderCart() {
                             </div>
                         </div>
                         <div class="cart-item-right">
-                            <img onclick="deinitems('-',${i})" class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
+                            <img onclick="deinitems('remove',${i})" class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
                                 style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
 
                             <p id="countitem" style="margin: 0 20px;">${cart[i].count}</p>
 
-                            <img onclick="deinitems('+',${i})" cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
+                            <img onclick="deinitems('plus',${i})" cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
                                 style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
                         </div>
                     </div>`;
@@ -251,24 +251,43 @@ function renderCart() {
 }
 
 function deinitems(action, index) {
-    if (action == '-') {
+    if (action == 'remove') {
         if (cart[index].count > 0) {
             cart[index].count--;
             $("#countitem" + index).text(cart[index].count)
-
+            $("#cartCount").text(cart.length)
+            $(".cartCount2").text(cart.length)
             if (cart[index].count <= 0) {
                 Swal.fire({
                     icon: "warning",
-                    title: 'Are you sure to dalete?',
+                    title: 'Are you sure to delete?',
                     showConfirmButton: true,
                     showCancelButton: true,
                     confirmButtonText: 'Delete',
-                    cancelButtonText: 'Cancel'
+                    cancelButtonText: 'Cancel',
+                }).then((res) => {
+                    if(res.isConfirmed) {
+                        cart.splice(index,1);
+                        renderCart();
+                        $("#cartCount").text(cart.length)
+                        $(".cartCount2").text(cart.length)
+                        if(cart.count <= 0){
+                            $("#cartCount").css('display', 'none');
+                        }
+                    } else {
+                        cart[index].count++;
+                        $("#countitem" + index).text(cart[index].count)
+                        renderCart();
+                    }
                 })
             }
-        }
-    } else if (action == '+') {
+        }renderCart();
+    }else{
         cart[index].count++;
-        cart[index].piece += product[i].piece
+        cart[index].piece += product[index].piece
+        renderCart();
+        $("#countitem" + index).text(cart[index].count)
     }
+
+    console.log(cart);
 }
