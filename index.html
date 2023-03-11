@@ -33,35 +33,31 @@
         <input onkeyup="searchSomething(this)" id="txt_search" class="searchBar" type="text" placeholder="Search...">
     </div>
 
+    <div class="menu-bg" style="display: none;"></div>
+
     <div id="mub" class="menuBotton">
 
         <div id="cartCount" class="cartCount" style="display: none;"> 
-            <p>1</p> 
+            <p></p> 
         </div>
 
         <div onclick="openMenu()" class="bottonCicle" >
             <ion-icon name="add-outline" style="height: 65px; width: 65px;"></ion-icon>
         </div>
         <li style="--i:1;">
-            <a href="#"><ion-icon name="shirt-outline"></ion-icon></a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
         </li>
         <li style="--i:2;">
             <a href="#"><ion-icon name="shirt-outline"></ion-icon></a>
         </li>
         <li style="--i:3;">
-            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+            <a href="#"><ion-icon name="heart-outline"></ion-icon></a>
         </li>
         <li style="--i:4;">
-            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </li>
-        <li style="--i:5;">
-            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </li>
-        <li style="--i:6;">
-            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </li>
-        <li style="--i:7;">
-            <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+            <div class="cartCount2"> 
+                <p></p> 
+            </div>
+            <a href="#" onclick="openModalCart()"><ion-icon name="cart-outline"></ion-icon></a>
         </li>
 
     </div>
@@ -89,7 +85,7 @@
                     <br>
                     <div class="area-btn">
                         <button onclick="closeModal()" class="btn-cash">Cancel</button>
-                        <button onclick="addtoCash()" class="btn-Cancel">Cash</button>
+                        <button onclick="addtoCash()" class="btn-Cancel">Conferm</button>
                     </div>
                 </div>
             </div>
@@ -97,123 +93,19 @@
 
     </div>
 
-    <div class="modal" style="display: none;">
-        <div class="modal-bg"></div>
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
             <div class="modal-header">
                 <h1>MY CART</h1>
-                <img class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png">
+                <img onclick="closeModal()" class="colse-modal-page" src="https://cdn-icons-png.flaticon.com/512/1617/1617543.png">
             </div>
 
-            <div class="cart-list">
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="cart-item-left">
-                        <img class="cartImg" src="/img_product/S__17866778.jpg">
-                        <div class="cart-item-detail">
-                            <p style="font-size: 2.5vw;">Product Name</p>
-                            <p style="font-size: 2.2vw;">Price 130 THB</p>
-                        </div>
-                    </div>
-                    <div class="cart-item-right">
-                        <img class="btn-" src="https://cdn-icons-png.flaticon.com/512/3031/3031143.png"
-                            style="width: 30px; height: 30px; margin-right: 5px; cursor:pointer;">
-                        <p style="margin: 0 20px;">1</p>
-                        <img cladd="btn+" src="https://cdn-icons-png.flaticon.com/512/1828/1828926.png"
-                            style="width: 30px; height: 30px; margin-left: 5px; cursor:pointer;">
-                    </div>
-                </div>
-
-
+            <div id="myCartList" class="cart-list">
             </div>
 
             <div class="modal-bottom">
-                <button class="btn-cansel">Cansel</button>
+                <button onclick="closeModal()" class="btn-cansel">Cansel</button>
                 <button class="btn-finish">Finish</button>
             </div>
 
