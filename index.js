@@ -284,7 +284,6 @@ function deinitems(action, index) {
         }renderCart();
     }else{
         cart[index].count++;
-        cart[index].piece += product[index].piece
         renderCart();
         $("#countitem" + index).text(cart[index].count)
     }

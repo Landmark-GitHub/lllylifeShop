@@ -9,5 +9,20 @@
   },
   "scripts": {
     "build": "postcss styles.css -o public/build/styles.css"
-  }
+  },
+  "name": "lllylifeshop",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Landmark-GitHub/lllylifeShop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Landmark-GitHub/lllylifeShop/issues"
+  },
+  "homepage": "https://github.com/Landmark-GitHub/lllylifeShop#readme"
 }

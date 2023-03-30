@@ -28,8 +28,12 @@
 
 .username {
     position: absolute;
-    top: 2%;
-    right: 1%;
+    padding: 10px;
+    right: 3%;
+}
+
+.username h1 {
+    font-size: 90px;
 }
 
 .containerSeach {
